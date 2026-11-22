@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#17271f">
+    <title>CosmixMC Hoplite Atlas</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="CosmixMC Hoplite Atlas home">
+        <span class="brand-icon" aria-hidden="true">✦</span>
+        <span>Cosmix<span class="brand-accent">MC</span></span>
+      </a>
+      <a class="top-link" id="admin-link" href="#admin">Admin sign in <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="sparkle" aria-hidden="true">✦</span> THE HOPLITE ITEM ATLAS</p>
+          <h1>Rare finds,<br><span>shared.</span></h1>
+          <p class="hero-description">Explore the Mythical and Legendary items of Hoplite. Browse community descriptions, screenshots, and optional recipes or guides.</p>
+          <a class="button button-primary" href="#items">Explore the items <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="book">
+            <div class="book-spine"></div>
+            <div class="book-page"><span class="book-star">✦</span><span class="book-lines"></span></div>
+          </div>
+          <span class="floating floating-one">✦</span>
+          <span class="floating floating-two">✧</span>
+          <span class="floating floating-three">·</span>
+          <div class="hero-caption">A collection of<br>Hoplite rare finds</div>
+        </div>
+      </section>
+
+      <section class="content" id="items">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">HOPLITE · MYTHICAL &amp; LEGENDARY</p>
+            <h2>Item archive <span class="heading-count" id="item-count">0</span></h2>
+          </div>
+          <div class="filters" role="group" aria-label="Filter items by rarity">
+            <button class="filter active" data-filter="all" type="button">All items</button>
+            <button class="filter" data-filter="mythical" type="button">Mythical</button>
+            <button class="filter" data-filter="legendary" type="button">Legendary</button>
+          </div>
+        </div>
+
+        <div class="recipe-grid" id="item-grid" aria-live="polite">
+          <p class="loading">Opening the item archive…</p>
+        </div>
+      </section>
+
+      <section class="share-section" id="admin">
+        <div class="share-intro">
+          <p class="eyebrow">ADMIN CORNER</p>
+          <h2>Share a rare<br>find.</h2>
+          <p>Only admins can add items. Every entry must be a Hoplite Mythical or Legendary item; a recipe or guide is optional.</p>
+          <div class="share-note"><span aria-hidden="true">✦</span> Browse freely. Add with care.</div>
+        </div>
+        <div class="admin-panel">
+          <form class="recipe-form" id="login-form">
+            <div class="form-heading">
+              <span class="form-icon" aria-hidden="true">⌑</span>
+              <div><h3>Admin sign in</h3><p>Sign in to add items to the archive.</p></div>
+            </div>
+            <label for="admin-password">Admin password</label>
+            <input id="admin-password" name="password" type="password" autocomplete="current-password" required>
+            <button class="button button-submit" type="submit">Sign in <span aria-hidden="true">↗</span></button>
+            <p class="form-message" id="login-message" role="status"></p>
+          </form>
+
+          <div class="recipe-form admin-editor" id="admin-editor" hidden>
+            <div class="form-heading">
+              <span class="form-icon" aria-hidden="true">＋</span>
+              <div><h3>Add a Hoplite item</h3><p>Only Mythical or Legendary items are allowed.</p></div>
+              <button class="logout-button" id="logout-button" type="button">Sign out</button>
+            </div>
+            <form id="item-form">
+              <label for="name">Item name</label>
+              <input id="name" name="name" maxlength="100" placeholder="e.g. Mythical item name" required>
+
+              <label for="rarity">Rarity</label>
+              <select id="rarity" name="rarity" required>
+                <option value="mythical">Mythical</option>
+                <option value="legendary">Legendary</option>
+              </select>
+
+              <label for="description">Item description</label>
+              <textarea id="description" name="description" maxlength="2000" rows="4" placeholder="Describe the item's appearance, effects, or what makes it special." required></textarea>
+
+              <label for="guide">Recipe or guide <span class="optional">(optional)</span></label>
+              <textarea id="guide" name="guide" maxlength="3000" rows="3" placeholder="How to obtain it, a recipe, or tips for using it."></textarea>
+
+              <label for="image">Image <span class="optional">(optional)</span></label>
+              <input id="image" name="image" type="file" accept="image/png,image/jpeg,image/gif,image/webp">
+              <p class="field-help">PNG, JPEG, GIF, or WebP · up to 5 MB</p>
+
+              <button class="button button-submit" type="submit">Add item <span aria-hidden="true">↗</span></button>
+              <p class="form-message" id="item-message" role="status"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer><a class="brand footer-brand" href="/"><span class="brand-icon" aria-hidden="true">✦</span> Cosmix<span class="brand-accent">MC</span></a><span>A community archive for Hoplite rare finds.</span><span>Made with <span class="footer-heart">♥</span> by the community</span></footer>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
